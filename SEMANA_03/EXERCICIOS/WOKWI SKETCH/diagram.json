@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "author": "Israel Carvalho",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 46.33, "left": 252.42, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 4.53,
+      "left": 215.92,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -13.89,
+      "left": 274.19,
+      "attrs": { "color": "blue", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -6.81,
+      "left": 245.31,
+      "attrs": { "color": "green", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -28.87,
+      "left": 299.51,
+      "attrs": { "color": "yellow", "flip": "1" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 251.11,
+      "left": 55.75,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 22.92,
+      "left": 377.87,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 124.97,
+      "left": -67.84,
+      "attrs": { "color": "red", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 174.41,
+      "left": 7.47,
+      "attrs": { "color": "green", "bounce": "0" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "led2:C", "black", [ "v0" ] ],
+    [ "led2:A", "esp:7", "red", [ "v0" ] ],
+    [ "led3:A", "esp:6", "green", [ "v0" ] ],
+    [ "led1:A", "esp:5", "blue", [ "v0" ] ],
+    [ "led4:A", "esp:4", "yellow", [ "v0" ] ],
+    [ "led3:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led4:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "ldr1:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "ldr1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "ldr1:AO", "esp:14", "blue", [ "h0" ] ],
+    [ "bz1:2", "esp:2", "red", [ "v0" ] ],
+    [ "bz1:1", "esp:GND.4", "black", [ "v0" ] ],
+    [ "btn2:1.l", "esp:16", "green", [ "h0" ] ],
+    [ "btn2:2.r", "esp:GND.1", "black", [ "h0" ] ],
+    [ "btn1:1.r", "esp:15", "red", [ "v-0.93", "h258.34" ] ],
+    [ "btn1:2.r", "esp:GND.1", "black", [ "h0" ] ]
+  ]
+}
