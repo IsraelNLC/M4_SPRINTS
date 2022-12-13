@@ -1,3 +1,5 @@
+Atividade semana 3 -- Uso do LDR e dispositivos de saída no ESP32
+
 WOKWI:
 https://wokwi.com/projects/346044998068732498
 
